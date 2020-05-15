@@ -22,7 +22,7 @@ function CharacterDetail(props) {
 
   return (
     <section className="detail-hero">
-      <h1>Hero name</h1>
+      <h1>Character name</h1>
       <div className="hero-profile">
         <div className="hero-description">
           <img src={imgPath} alt="Avatar" style={styleImg} />
