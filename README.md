@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # COMICS APP
 
 Proyecto del taller de ReactJs de Bits Americas S.A.S.
@@ -27,3 +28,7 @@ Para ejecutar la aplicación en produccion necesitamos un servidor statico como 
 ## Ejecucuin de la api
 
 `npm run server`
+=======
+# comics-react
+Este es un repositorio de una app ejemplo de react con personajes de historietas Marvel Estudios y DC Comics
+>>>>>>> eeb7b2ae75a849a36a732962a668c55ed14de193
