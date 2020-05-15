@@ -6,12 +6,12 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.dev.config.js --open --mode development",
     "build": "rimraf dist && webpack --config ./webpack.config.js --mode production",
-    "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "lint": "eslint src/ --fix",
     "server": "json-server --watch ./server/comics_characters.json"
   },
   "keywords": [],
-  "author": "Ludwring <ludwring.liccien@gmail.com> (http://www.ludwringliccien.com/)",
+  "author": "Juan Leal",
   "license": "MIT",
   "dependencies": {
     "react": "16.13.1",

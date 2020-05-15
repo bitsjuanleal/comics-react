@@ -2,8 +2,6 @@
 
 Proyecto del taller de ReactJs de Bits Americas S.A.S.
 
-Dictado por Ludwring Liccien [@lliccien](https://twitter.com/lliccien)
-
 ## Instalación
 
 `npm i` ó `npm install`
@@ -12,7 +10,7 @@ Dictado por Ludwring Liccien [@lliccien](https://twitter.com/lliccien)
 
 `npm start`
 
-## Contrucción para producción
+## Construcción para producción
 
 `npm run build`
 
