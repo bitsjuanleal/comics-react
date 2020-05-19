@@ -1,36 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import '../components/styles/detailhero.scss';
 import Powers from '../components/Powers';
+import { Link } from 'react-router-dom';
+import useIsMountedRef from '../components/core/UseIsMountedRef';
 
 function CharacterDetail(props) {
-  // const { label } = props;
-  // const label = 'marvel';
   const { comic, name } = props.match.params;
-  // const name = 'Character Name';
-  
+
   const api = `http://localhost:3000/${comic}?name=${name}`;
   const [character, setCharacterDetail] = useState([]);
   const [powers, setPowersCharacter] = useState([]);
+  const isMountedRef = useIsMountedRef();
+  var characterLoaded = false;
 
   useEffect(() => {
     fetch(api)
       .then((response) => response.json())
       .then((data) => {
-        setCharacterDetail(data[0]);
+        if (isMountedRef.current) {
+          setCharacterDetail(data[0]);
+          characterLoaded = true;
+        }
       });
-  }, []);
+    window.scrollTo(0, 0);
+  }, [isMountedRef]);
 
   useEffect(() => {
-    setPowersCharacter(character.powers);
+    if (isMountedRef.current) {
+      setPowersCharacter(character.powers);
+    }
   }, [character]);
 
   const configCardMarvel = {
     background: '#ffd4d4',
-    repeatPowers: 'repeat(3, 1fr)'
+    repeatPowers: 'repeat(3, 1fr)',
   };
   const configCardDc = {
     background: '#e0ecf9',
-    repeatPowers: 'repeat(2, 1fr)'
+    repeatPowers: 'repeat(2, 1fr)',
   };
 
   const getDataComic = (comicName) => {
@@ -73,6 +80,16 @@ function CharacterDetail(props) {
         <h2>BIOGRAPHY</h2>
         {character.biography}
       </div>
+      {character.url != undefined && (
+        <div className="url">
+          <Link to={`/${comic}`} className="alignleft">
+            Back
+          </Link>
+          <a href={character.url} target="_blank" className="alignright">
+            See more
+          </a>
+        </div>
+      )}
     </section>
   );
 }

@@ -3,7 +3,6 @@ import React from 'react';
 function Powers(props) {
   let powers = props.powers;
   return powers.map((power, index) => {
-    console.log(power.label);
     return (
       <React.Fragment key={index}>
         {power.label == undefined && (

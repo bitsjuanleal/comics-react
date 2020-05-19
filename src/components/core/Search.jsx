@@ -12,17 +12,6 @@ function Search(props) {
     borderColor: borderColor,
     color: color,
   };
-  /*const handleInputChange = (event) => {
-    const query = event.currentTarget.value;
-    const { charactersList, filterCharacter, onUpdateCharacters } = props;
-
-    const filteredCharacters = charactersList.filter(
-      (character) => !query || filterCharacter(query, character)
-    );
-    console.log(filteredCharacters);
-
-    onUpdateCharacters(filteredCharacters);
-  };*/
   const handleChange = value => {
     onUpdateCharacters(value);
   };

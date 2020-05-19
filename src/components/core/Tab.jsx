@@ -20,9 +20,7 @@ class Tab extends Component {
 
   componentDidMount() {
       const { label, updateActiveTab, activeUrlTab } = this.props;
-      console.log('activeUrlTab',activeUrlTab);
     if (label == 'detail') {
-        console.log('es detail tab')
       updateActiveTab(activeUrlTab, label);
     }
   }

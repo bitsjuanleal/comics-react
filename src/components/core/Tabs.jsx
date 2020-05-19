@@ -21,7 +21,7 @@ class Tabs extends Component {
   };
 
   updateActiveTab = (activeUrlTab, label) => {
-    console.log(activeUrlTab, label);
+    // console.log(activeUrlTab, label);
     // this.setState({ activeTab: `${activeUrlTab}/${label}` });
   };
 

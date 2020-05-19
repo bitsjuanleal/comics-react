@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Character from './Character';
 import './styles/listcharacters.scss';
 
 function ListCharacters(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { type, characters } = props;
   const configCardMarvel = {
     imgPath: '../../public/images/capitan.png',
     background: '#ffd4d4',
-    pathDetail: '/marvel/'
+    pathDetail: '/marvel/',
   };
   const configCardDc = {
     imgPath: '../../public/images/flash.png',
     background: '#e0ecf9',
-    pathDetail: '/dc/'
+    pathDetail: '/dc/',
   };
   const configCard = type == 'marvel' ? configCardMarvel : configCardDc;
   return (

@@ -39,5 +39,12 @@ body .tab-list li {
 }
 
 #root:nth-last-child(2){
-  padding-bottom: 6rem;
+  padding-bottom: 8rem;
+}
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
 }

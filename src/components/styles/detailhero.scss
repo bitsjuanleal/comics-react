@@ -25,7 +25,7 @@
   flex: 50%;
 }
 .detail-hero div.hero-powers div.list {
-    display: list-item;
+  display: list-item;
 }
 .detail-hero div.hero-powers {
   display: grid;
@@ -45,6 +45,31 @@
   background-color: lightblue;
   padding: 1rem;
   color: rgb(14, 9, 9);
+}
+.detail-hero .description {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.detail-hero .url {
+    margin-top: 1rem;
+  width: 100%;
+  text-align: right;
+}
+
+.detail-hero a:link,
+.detail-hero a:visited {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.detail-hero a:hover,
+.detail-hero a:active {
+  background-color: rgb(155, 151, 151);
 }
 
 @media (max-width: 1046px) {

@@ -15,18 +15,16 @@ function Character(props) {
   };
   return (
     <div className="card">
-      <div className="card-body">
-        <div className="hero-img" style={styleDiv}></div>
-        <div className="card-container">
-          <h4>
-            <b>
-              <Link to={`/detail${config.pathDetail}${datacharater.name}`}>
-                {datacharater.name}
-              </Link>
-            </b>
-          </h4>
+      <Link to={`/detail${config.pathDetail}${datacharater.name}`}>
+        <div className="card-body">
+          <div className="hero-img" style={styleDiv}></div>
+          <div className="card-container">
+            <h4>
+              <b>{datacharater.name}</b>
+            </h4>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }

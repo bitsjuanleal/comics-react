@@ -10,7 +10,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
 } from 'react-router-dom';
 import '../components/styles/app.scss';
@@ -86,13 +85,15 @@ function Home() {
         {/*<div label="detail" activeUrlTab={defaultComic}></div>*/}
       </Tabs>
       {renderRedirect(defaultComic.label)}
-      <Route exact path="/marvel">
-        <Container> {dataMarvel.page} </Container>
-      </Route>
-      <Route exact path="/dc">
-        <Container> {dataDc.page} </Container>
-      </Route>
-      <Route exact path="/detail/:comic/:name" component={CharacterDetail} />
+      <Switch>
+        <Route exact path="/marvel">
+          <Container> {dataMarvel.page} </Container>
+        </Route>
+        <Route exact path="/dc">
+          <Container> {dataDc.page} </Container>
+        </Route>
+        <Route exact path="/detail/:comic/:name" component={CharacterDetail} />
+      </Switch>
       <Footer backgroundColor={defaultComic.color} />
     </Router>
   );

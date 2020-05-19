@@ -7,13 +7,18 @@ function Dc() {
 
   const [characters, setCharacters] = useState([]);
   const [charactersList, setCharactersList] = useState([]);
+  const status = {}; // mutable status object
   useEffect(() => {
-    fetch(api)
-      .then((response) => response.json())
-      .then((data) => {
-        setCharacters(data);
-        setCharactersList(data);
-      });
+    status.aborted = false;
+    if (!status.aborted) {
+      fetch(api)
+        .then((response) => response.json())
+        .then((data) => {
+          setCharacters(data);
+          setCharactersList(data);
+        });
+    }
+    status.aborted = true;
   }, []);
   // filter records by search text
   const excludeColumns = ['image', 'url', 'biography', 'power'];
