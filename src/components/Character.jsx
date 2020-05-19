@@ -1,21 +1,30 @@
 import React from 'react';
 import './styles/character.scss';
+import { Link } from 'react-router-dom';
 
 function Character(props) {
-  const { imgPath, background } = props.config;
+  const { datacharater, config } = props;
   const styleImg = {
     width: '100%',
-    backgroundColor: background,
+  };
+  const styleDiv = {
+    backgroundImage: 'url(' + datacharater.image + ')',
+    minHeight: '200px',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
   };
   return (
     <div className="card">
       <div className="card-body">
-        <img src={imgPath} alt="Avatar" style={styleImg} />
+        <div className="hero-img" style={styleDiv}></div>
         <div className="card-container">
           <h4>
-            <b>Character</b>
+            <b>
+              <Link to={`/detail${config.pathDetail}${datacharater.name}`}>
+                {datacharater.name}
+              </Link>
+            </b>
           </h4>
-          <p>Captain America</p>
         </div>
       </div>
     </div>

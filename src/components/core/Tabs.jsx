@@ -11,9 +11,8 @@ class Tabs extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
-      activeTab: this.props.children[0].props.label,
+      activeTab: this.props.children[0].props.activeUrlTab.label,
     };
   }
 
@@ -21,9 +20,15 @@ class Tabs extends Component {
     this.setState({ activeTab: tab });
   };
 
+  updateActiveTab = (activeUrlTab, label) => {
+    console.log(activeUrlTab, label);
+    // this.setState({ activeTab: `${activeUrlTab}/${label}` });
+  };
+
   render() {
     const {
       onClickTabItem,
+      updateActiveTab,
       props: { children },
       state: { activeTab },
     } = this;
@@ -32,25 +37,20 @@ class Tabs extends Component {
       <div className="tabs">
         <ol className="tab-list">
           {children.map((child) => {
-            const { label, onclickevent } = child.props;
-
+            const { label, onclickevent, activeUrlTab } = child.props;
             return (
               <Tab
                 activeTab={activeTab}
                 key={label}
                 label={label}
                 eventclick={onclickevent}
+                activeUrlTab={activeUrlTab}
+                updateActiveTab={updateActiveTab}
                 onClickParent={onClickTabItem}
               />
             );
           })}
         </ol>
-        <div className="tab-content">
-          {children.map((child) => {
-            if (child.props.label !== activeTab) return undefined;
-            return child.props.children;
-          })}
-        </div>
       </div>
     );
   }

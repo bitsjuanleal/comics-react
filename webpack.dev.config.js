@@ -14,9 +14,11 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
+    publicPath:'/',
     hot: true,
     open: true,
     port: 9000,
+    historyApiFallback: true,
   },
   module: {
     rules: [

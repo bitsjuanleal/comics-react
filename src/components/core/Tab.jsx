@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Tab extends Component {
   static propTypes = {
     activeTab: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     onClickParent: PropTypes.func.isRequired,
+    updateActiveTab: PropTypes.func.isRequired,
   };
 
   onClick = () => {
-    const { label, onClickParent, eventclick } = this.props;
+    const { label, onClickParent, eventclick, activeUrlTab, updateActiveTab } = this.props;
     onClickParent(label);
     if (eventclick != undefined) {
       eventclick(label);
     }
   };
+
+  componentDidMount() {
+      const { label, updateActiveTab, activeUrlTab } = this.props;
+      console.log('activeUrlTab',activeUrlTab);
+    if (label == 'detail') {
+        console.log('es detail tab')
+      updateActiveTab(activeUrlTab, label);
+    }
+  }
 
   render() {
     const {
@@ -29,9 +40,13 @@ class Tab extends Component {
     }
 
     return (
-      <li className={className} onClick={onClick}>
+      <Link
+        className={className}
+        onClick={onClick}
+        to={'/' + label.toLowerCase()}
+      >
         {label}
-      </li>
+      </Link>
     );
   }
 }

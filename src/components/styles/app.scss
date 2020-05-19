@@ -1,6 +1,9 @@
 @font-face {
-  font-family: "Comics-Font";
-  src: url("../../../public/fonts/Comic.ttf");
+  font-family: 'Comics-Font';
+  src: url('../../../public/fonts/Comic.ttf');
+}
+body {
+  background-color: rgb(14, 9, 9);
 }
 
 body * {
@@ -20,4 +23,21 @@ body .tab-list li {
   body header h1 {
     display: none;
   }
+}
+
+.msg-not-found {
+  width: 100%;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+#root:nth-last-child(2){
+  padding-bottom: 6rem;
 }

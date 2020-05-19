@@ -6,44 +6,95 @@ import Tabs from '../components/core/Tabs';
 import Marvel from './Marvel';
 import Dc from './Dc';
 import CharacterDetail from './CharacterDetail';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
 import '../components/styles/app.scss';
 
 function Home() {
   var dataMarvel = {
     page: <Marvel />,
-    label: 'Marvel',
+    label: 'marvel',
     imgHeader: '../../public/images/marvel.svg',
     title: 'Marvel characters',
-    color: '#d40317'
+    color: '#d40317',
+    fontColor: '#ffffff',
   };
   var dataDc = {
     page: <Dc />,
-    label: 'Dc',
+    label: 'dc',
     imgHeader: '../../public/images/dc.svg',
     title: 'DC characters',
-    color: '#100055'
+    color: '#100055',
+    fontColor: '#ffffff',
   };
-  const [defaultComic, setDefaultComic] = useState(dataMarvel);
+  var dataDetail = {
+    label: 'detail',
+    title: 'Character details',
+    fontColor: '#272424',
+  };
+  var defaultComicPage = dataMarvel;
+  const getDataComic = (comicName) => {
+    let data = dataMarvel;
+    switch (comicName) {
+      case 'dc':
+        data = dataDc;
+        break;
+      case 'detail':
+        data = dataDetail;
+        break;
+    }
+    return data;
+    /*return comicName != 'marvel'
+      ? comicName == 'dc'
+        ? dataDc
+        : dataDetail
+      : dataMarvel;*/
+  };
+  const renderRedirect = (path) => {
+    return <Redirect to={`/${path}`} />;
+  };
+  let path = window.location.pathname.split('/').pop();
+  defaultComicPage = getDataComic(path);
+  const [defaultComic, setDefaultComic] = useState(defaultComicPage);
   const onClickTab = (comic) => {
-    var data = comic == 'Marvel' ? dataMarvel : dataDc;
+    var data = comic == 'marvel' ? dataMarvel : dataDc;
     setDefaultComic(data);
   };
   return (
-    <React.Fragment>
-      <Header title={defaultComic.title} imgUrl={defaultComic.imgHeader} />
+    <Router>
+      <Header
+        title={defaultComic.title}
+        imgUrl={defaultComic.imgHeader}
+        textColor={defaultComic.fontColor}
+      />
       <Tabs>
-        <div label="Marvel" onclickevent={onClickTab}>
-          <Container> {dataMarvel.page} </Container>
-        </div>
-        <div label="Dc" onclickevent={onClickTab}>
-          <Container> {dataDc.page} </Container>
-        </div>
-        <div label="detail">
-          <Container> <CharacterDetail label={defaultComic.label}/> </Container>
-        </div>
+        <div
+          label="marvel"
+          onclickevent={onClickTab}
+          activeUrlTab={defaultComic}
+        ></div>
+        <div
+          label="dc"
+          onclickevent={onClickTab}
+          activeUrlTab={defaultComic}
+        ></div>
+        {/*<div label="detail" activeUrlTab={defaultComic}></div>*/}
       </Tabs>
-      <Footer backgroundColor={defaultComic.color}/>
-    </React.Fragment>
+      {renderRedirect(defaultComic.label)}
+      <Route exact path="/marvel">
+        <Container> {dataMarvel.page} </Container>
+      </Route>
+      <Route exact path="/dc">
+        <Container> {dataDc.page} </Container>
+      </Route>
+      <Route exact path="/detail/:comic/:name" component={CharacterDetail} />
+      <Footer backgroundColor={defaultComic.color} />
+    </Router>
   );
 }
 

@@ -1,1 +1,25 @@
-<svg id="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2070.72 575.93"><defs><style>.cls-1{fill:#d40317;}.cls-2,.cls-3{fill:none;}.cls-3{stroke:#fff;stroke-width:2px;}.cls-4{fill:#fff;}</style></defs><title>marvel</title><rect class="cls-1" y="180.73" width="2070.72" height="220.36"/><rect class="cls-2" x="787.15" width="445.04" height="575.93"/><g id="layer2"><path id="path4142" class="cls-3" d="M63.15,44.39h304v123h-304Z" transform="translate(820.21 185.02)"/></g><g id="g2505"><path id="path2509" class="cls-4" d="M325.58,54h17.21v84.24h14.59v21.25h-31.8V54Z" transform="translate(820.21 185.02)"/><path id="path2515" class="cls-4" d="M207,104.24c12.34-.78,11.22-16.62,11.22-16.62C216.34,72.16,207,72.94,207,72.94Zm-39.66,24.34-5.24-32.07-4.49,32.07ZM72.68,159.11V54H95.87l8.23,44.05,9.36-44H135.9v94.67L150.5,54h22.82l14.21,94.67V54.39h30.31s10.47,1.93,15.71,17L231.31,54h18.33l8.6,54.49,9-54.1h51.63V74.1H303.51V95.74H318.1v22H303.88v20.1h15v21.25h-33.3V57.87L268.34,159.11H247.77L236.92,91.87s-1.87,18.55-12,27.05L238,159.11h-18l-12.72-35.17v35.17H171.07l-1.87-10.05H155.36l-3,10.05H118V120.47l-9,38.64H99.62l-8.24-38.26v37.87Z" transform="translate(820.21 185.02)"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2070.7 220.4" style="enable-background:new 0 0 2070.7 220.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#D40317;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:2;}
+	.st2{fill:#FFFFFF;}
+</style>
+<title>dc</title>
+<rect x="0" class="st0" width="2070.7" height="220.4"/>
+<g>
+	<g id="layer2">
+		<path id="path4142" class="st1" d="M883.4,49h304v123h-304V49z"/>
+	</g>
+	<g id="g2505">
+		<path id="path2509" class="st2" d="M1145.8,58.6h17.2v84.2h14.6v21.3h-31.8V58.6z"/>
+		<path id="path2515" class="st2" d="M1027.3,108.8c12.3-0.8,11.2-16.6,11.2-16.6c-1.9-15.5-11.2-14.7-11.2-14.7V108.8z
+			 M987.6,133.2l-5.2-32.1l-4.5,32.1H987.6z M892.9,163.7V58.6h23.2l8.2,44.1l9.4-44h22.4v94.7l14.6-94.7h22.8l14.2,94.7V59h30.3
+			c0,0,10.5,1.9,15.7,17l-2.2-17.4h18.3l8.6,54.5l9-54.1h51.6v19.7h-15.4v21.6h14.6v22h-14.2v20.1h15v21.3h-33.3V62.5l-17.2,101.2
+			H1068l-10.8-67.2c0,0-1.9,18.5-12,27l13.1,40.2h-18l-12.7-35.2v35.2h-36.2l-1.9-10.1h-13.8l-3,10.1h-34.4v-38.6l-9,38.6h-9.4
+			l-8.2-38.3v37.9L892.9,163.7z"/>
+	</g>
+</g>
+</svg>
