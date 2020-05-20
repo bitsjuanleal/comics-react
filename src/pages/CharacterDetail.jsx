@@ -11,7 +11,6 @@ function CharacterDetail(props) {
   const [character, setCharacterDetail] = useState([]);
   const [powers, setPowersCharacter] = useState([]);
   const isMountedRef = useIsMountedRef();
-  var characterLoaded = false;
 
   useEffect(() => {
     fetch(api)
@@ -19,7 +18,6 @@ function CharacterDetail(props) {
       .then((data) => {
         if (isMountedRef.current) {
           setCharacterDetail(data[0]);
-          characterLoaded = true;
         }
       });
     window.scrollTo(0, 0);

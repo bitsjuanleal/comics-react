@@ -38,7 +38,7 @@ body .tab-list li {
   min-height: 100vh;
 }
 
-#root:nth-last-child(2){
+#root > section {
   padding-bottom: 8rem;
 }
 

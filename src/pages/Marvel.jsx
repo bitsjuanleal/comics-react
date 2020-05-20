@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import Search from '../components/core/Search';
 import ListCharacters from '../components/ListCharacters';
+import useIsMountedRef from '../components/core/UseIsMountedRef';
 
 function Marvel() {
   const api = 'http://localhost:3000/marvel';
 
   const [characters, setCharacters] = useState([]);
   const [charactersList, setCharactersList] = useState([]);
-  const status = {}; // mutable status object
+  const isMountedRef = useIsMountedRef();
+
   useEffect(() => {
-    status.aborted = false;
-    if (!status.aborted) {
-      fetch(api)
-        .then((response) => response.json())
-        .then((data) => {
+    fetch(api)
+      .then((response) => response.json())
+      .then((data) => {
+        if (isMountedRef.current) {
           setCharacters(data);
           //setCharactersList(data);
-        });
-    }
-    status.aborted = true;
-  }, []);
+        }
+      });
+  }, [isMountedRef]);
+
   useEffect(() => {
     setCharactersList(characters);
   }, [characters]);
+
   // filter records by search text
   const excludeColumns = ['image', 'url', 'biography', 'power'];
   const filterData = (value) => {
